@@ -9,7 +9,7 @@ export default function ProgressBar() {
     const update = () => {
       raf = 0
       const max = document.documentElement.scrollHeight - window.innerHeight
-      const p = max > 0 ? window.scrollY / max : 0
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
       if (ref.current) ref.current.style.transform = `scaleX(${p})`
     }
     const onScroll = () => {
