@@ -40,7 +40,16 @@ export default function Services() {
               <Reveal key={s.name} delay={i * 90}>
                 <div
                   className="services__item"
-                  onClick={() => setOpen(open === i ? null : i)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={open === i}
+                  onClick={() => setOpen((prev) => (prev === i ? null : i))}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setOpen((prev) => (prev === i ? null : i))
+                    }
+                  }}
                 >
                   <div className="services__row">
                     <span className="services__name">{s.name}</span>
