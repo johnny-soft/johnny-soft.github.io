@@ -16,7 +16,11 @@ export default function BackToTop() {
       type="button"
       className={`back-to-top${visible ? ' is-visible' : ''}`}
       aria-label="Voltar ao topo"
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      onClick={() => {
+        const prefersReduced =
+          window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' })
+      }}
     >
       &#8593;
     </button>
