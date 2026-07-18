@@ -5,14 +5,14 @@ Site da johnnySoft — React + Vite, com hero de simulação de fluido em WebGL.
 ## Desenvolvimento
 
 ```bash
-npm install
-npm run dev      # servidor local
-npm run build    # build de produção em dist/
+pnpm install
+pnpm dev      # servidor local
+pnpm build    # build de produção em dist/
 ```
 
 ## Deploy
 
-Push na branch `main` dispara o workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
+PR aprovado na branch `main` dispara o workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
 que faz o build e publica no GitHub Pages.
 
 > **Configuração única**: em _Settings → Pages_ do repositório, defina
